@@ -1,0 +1,263 @@
+/* ======================================================
+                    4. ABOUT SECTION
+======================================================*/
+
+#about{
+    position:relative;
+    overflow:hidden;
+}
+
+/* Background Title */
+
+/*======================================================
+                ABOUT CONTAINER
+======================================================*/
+
+.about-container{
+
+    width:100%;
+
+    max-width:1150px;
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:55px;
+
+    position:relative;
+
+}
+
+/*======================================================
+                PROFILE IMAGE
+======================================================*/
+
+.about-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+/* Animated Ring */
+
+.about-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:255px;
+
+    height:255px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(0,229,255,.25);
+
+    animation:rotateRing 20s linear infinite;
+
+}
+
+/* Glow */
+
+.about-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:rgba(0,229,255,.15);
+
+    filter:blur(45px);
+
+    z-index:-1;
+
+}
+
+.about-image img{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid var(--primary);
+
+    box-shadow:
+
+        0 0 35px rgba(0,229,255,.25),
+
+        0 0 70px rgba(0,229,255,.12);
+
+    transition:.4s;
+
+}
+
+.about-image img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+
+        0 0 45px rgba(0,229,255,.45),
+
+        0 0 90px rgba(0,229,255,.18);
+
+}
+
+@keyframes rotateRing{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*======================================================
+                CONTENT
+======================================================*/
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.about-content h3{
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+}
+
+.about-content p{
+
+    font-size:1rem;
+
+    line-height:1.95;
+
+    text-align:justify;
+
+    margin-bottom:20px;
+
+}
+
+/*======================================================
+                HIGHLIGHTS
+======================================================*/
+
+.about-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+.highlight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.highlight:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 25px rgba(0,229,255,.18);
+
+}
+
+.highlight i{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(0,229,255,.15);
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+}
+
+.highlight h4{
+
+    font-size:1rem;
+
+    margin-bottom:4px;
+
+}
+
+.highlight span{
+
+    font-size:.9rem;
+
+    color:var(--text-light);
+
+}
+

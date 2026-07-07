@@ -1,0 +1,350 @@
+#home-text {
+  font-family: "Inter", sans-serif;
+  font-size: medium;
+}
+/* #h2-feature {
+  font-size: 3rem;
+  font-family: "audiowide", sans-serif;
+  text-shadow: 3px 3px 10px var(--primary);
+
+  letter-spacing: 2px;
+} */
+
+#gradient{
+  background: linear-gradient(to right, #008baa, #653ae9,#71218bea,#00aaa2,#ac18c0,#008baa);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+@keyframes animate-gradient {
+  to{
+    background-position: 200%;
+  }
+  
+}
+* {
+  font-family: "Inter", sans-serif;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #09090f;
+  --surface: #111827;
+  --surface-light: rgba(255, 255, 255, 0.05);
+
+  --primary: #00e5ff;
+  --primary-dark: #0099cc;
+  --secondary: #8b5cf6;
+
+  --text: #ffffff;
+  --text-light: #a1a1aa;
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  --radius: 20px;
+  --transition: 0.35s ease;
+
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  overflow-x: hidden;
+
+  min-height: 100vh;
+
+  position: relative;
+
+}
+
+
+/* =====================================================
+   ANIMATED GRID
+===================================================== */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  animation: gridMove 15s linear infinite;
+
+  z-index: -4;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(60px);
+  }
+}
+
+/* =====================================================
+   PARTICLE CANVAS
+===================================================== */
+
+#bgCanvas {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  opacity: 0.85;
+
+  z-index: -10;
+}
+
+/* =====================================================
+   FLOATING TECHNOLOGY ICONS
+===================================================== */
+
+.tech-bg {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+.tech-bg i {
+  position: absolute;
+
+  font-size: 40px;
+
+  opacity: 0.2;
+
+  animation: float 12s ease-in-out infinite;
+}
+
+.html {
+  top: 30%;
+  left: 8%;
+  color: #e34f26;
+}
+
+.css {
+  top: 70%;
+  left: 15%;
+  color: #1572b6;
+
+  animation-delay: 2s;
+}
+
+.js {
+  top: 20%;
+  right: 12%;
+  color: #f7df1e;
+
+  animation-delay: 4s;
+}
+
+.react {
+  top: 55%;
+  right: 18%;
+  color: #61dafb;
+
+  animation-delay: 1s;
+}
+
+.git {
+  bottom: 10%;
+  right: 40%;
+  color: #f05032;
+
+  animation-delay: 3s;
+}
+
+.figma {
+  top: 40%;
+  left: 45%;
+  color: #a259ff;
+
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+}
+
+/* =====================================================
+   BLUR LIGHTS
+===================================================== */
+
+.blur {
+  position: fixed;
+
+  border-radius: 50%;
+
+  filter: blur(150px);
+
+  z-index: -2;
+}
+
+.blur1 {
+  width: 420px;
+  height: 420px;
+
+  background: var(--primary);
+
+  top: -120px;
+  left: -120px;
+}
+
+.blur2 {
+  width: 320px;
+  height: 320px;
+
+  background: #6c2cff;
+
+  right: -120px;
+  top: 40%;
+}
+
+.blur3 {
+  width: 360px;
+  height: 360px;
+
+  background: #ff3ca6;
+
+  left: 40%;
+  bottom: -120px;
+}
+
+/* =====================================================
+   COMMON SECTION STYLES
+===================================================== */
+
+.panel {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 110px 6% 60px;
+}
+
+.panel h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+
+.glass {
+  background: var(--glass);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: var(--radius);
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-light);
+
+  line-height: 1.8;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+img {
+  user-select: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Smooth transitions */
+
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}

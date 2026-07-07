@@ -1,0 +1,266 @@
+.content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.content h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+
+  line-height: 1.2;
+
+  margin-bottom: 10px;
+}
+
+.content h1 span {
+  color: var(--primary);
+
+  text-shadow: 0 0 25px rgba(0, 217, 255, 0.45);
+}
+
+/* =====================================================
+   WELCOME TEXT
+===================================================== */
+
+.welcome-text {
+  font-family: Consolas, monospace;
+
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+
+  color: var(--primary);
+
+  letter-spacing: 2px;
+
+  margin: 20px 0;
+
+  text-shadow: 0 0 12px rgba(0, 217, 255, 0.7);
+}
+
+.welcome-text::after {
+  content: "|";
+
+  margin-left: 4px;
+
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   JOB TITLE
+===================================================== */
+
+.job-title {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding: 14px 26px;
+
+  border-left: 3px solid var(--primary);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: var(--primary);
+
+  font-family: Consolas, monospace;
+
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+
+  letter-spacing: 1px;
+
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.15);
+
+  animation: titleGlow 3s infinite;
+}
+
+.job-title i {
+  font-size: 1rem;
+}
+
+@keyframes titleGlow {
+  50% {
+    box-shadow: 0 0 35px rgba(0, 217, 255, 0.35);
+  }
+}
+
+/* =====================================================
+   EXPLORE BUTTON
+===================================================== */
+
+#exploreBtn,
+.resume-btn{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:220px;
+    min-height:58px;
+
+
+    padding:0px 24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    border:none;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:
+        transform .35s,
+        box-shadow .35s;
+
+    box-shadow:
+        0 0 18px rgba(0,229,255,.25),
+        0 0 45px rgba(139,92,246,.15);
+
+}
+
+/* Shine */
+
+#exploreBtn::before,
+.resume-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,.55),
+        transparent 80%
+    );
+
+    transform:translateX(-100%);
+
+}
+
+#exploreBtn:hover::before,
+.resume-btn:hover::before{
+
+    animation:buttonShine .8s forwards;
+
+}
+
+@keyframes buttonShine{
+
+    to{
+
+        transform:translateX(120%);
+
+    }
+
+}
+
+/* Hover */
+
+#exploreBtn:hover,
+.resume-btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 28px rgba(0,229,255,.45),
+        0 0 60px rgba(0,229,255,.22);
+
+}
+
+/* Click */
+
+#exploreBtn:active,
+.resume-btn:active{
+
+    transform:scale(.96);
+
+}
+
+/*======================================================
+            OPTIONAL OUTLINE BUTTON
+======================================================*/
+
+.resume-btn{
+
+    background:transparent;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.resume-btn:hover{
+
+    background:var(--primary);
+
+    color:#09090f;
+
+}
+/* =====================================================
+   HERO RESPONSIVE
+===================================================== */
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+    margin-top:40px;
+}
+
+.hero-buttons > *{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    flex:none;
+}
